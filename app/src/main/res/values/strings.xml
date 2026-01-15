@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">visiograph</string>
+    <string name="login">Halaman Login</string>
+    <string name="anggota_entry">Tambah Anggota</string>
+    <string name="anggota_edit">Edit Anggota</string>
+    <string name="anggota_detail">Detail Anggota</string>
+    <string name="back">Back</string>
+    <string name="btn_submit">Submit</string>
+    <string name="nama">Nama Anggota*</string>
+    <string name="nama1">Nama Anggota  :</string>
+    <string name="required_field">* required fields</string>
 </resources>
