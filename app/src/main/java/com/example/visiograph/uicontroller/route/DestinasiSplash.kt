@@ -2,8 +2,7 @@ package com.example.visiograph.uicontroller.route
 
 import com.example.visiograph.R
 
-object DestinasiHome: DestinasiNavigasi {
-    override val route = "home"
+object DestinasiSplash : DestinasiNavigasi {
+    override val route = "splash"
     override val titleRes = R.string.app_name
-
 }
