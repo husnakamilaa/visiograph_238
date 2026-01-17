@@ -1,7 +1,7 @@
 package com.example.visiograph.apiservice
 
-import com.example.visiograph.modeldata.login.LoginRequest
-import com.example.visiograph.modeldata.login.LoginResponse
+import com.example.visiograph.modeldata.LoginRequest
+import com.example.visiograph.modeldata.LoginResponse
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST
