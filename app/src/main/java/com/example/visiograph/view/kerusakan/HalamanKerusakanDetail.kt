@@ -45,15 +45,21 @@ fun DetailKerusakanScreen(
         Column(modifier = Modifier.padding(innerPadding).fillMaxSize().background(colorResource(id = R.color.light_gray)).padding(24.dp)) {
             Card(modifier = Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = Color.White), shape = RoundedCornerShape(16.dp)) {
                 Column(modifier = Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                    DetailRow("Barang", viewModel.detailUiState.nama_barang, Icons.Default.ShoppingCart)
-                    Divider()
-                    DetailRow("Deskripsi", viewModel.detailUiState.deskripsi, Icons.Default.Info)
-                    Divider()
-                    DetailRow("Jumlah", "${viewModel.detailUiState.jumlah} unit", Icons.Default.List)
-                    Divider()
-                    DetailRow("Tanggal", formatTanggalIndonesia(viewModel.detailUiState.tanggal), Icons.Default.DateRange)
-                    Divider()
-                    DetailRow("Status", viewModel.detailUiState.status_perbaikan, Icons.Default.Build)
+                    DetailRow("Barang",
+                        viewModel.detailUiState.nama_barang,
+                        Icons.Default.ShoppingCart)
+                    DetailRow("Deskripsi",
+                        viewModel.detailUiState.deskripsi,
+                        Icons.Default.Info)
+                    DetailRow("Jumlah",
+                        "${viewModel.detailUiState.jumlah} unit",
+                        Icons.Default.List)
+                    DetailRow("Tanggal",
+                        formatTanggalIndonesia(
+                            viewModel.detailUiState.tanggal), Icons.Default.DateRange)
+                    DetailRow("Status",
+                        viewModel.detailUiState.status_perbaikan,
+                        Icons.Default.Build)
                 }
             }
 

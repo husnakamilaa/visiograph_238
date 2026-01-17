@@ -27,7 +27,6 @@ class EntryPeminjamanVM(
     var uiStatePeminjaman by mutableStateOf(UIStatePeminjaman())
         private set
 
-    // State untuk Dropdown
     var daftarBarang by mutableStateOf(listOf<DataBarang>())
     var daftarAnggota by mutableStateOf(listOf<DataAnggota>())
 

@@ -28,26 +28,45 @@ fun DetailPeminjamanScreen(
     navigateBack: () -> Unit,
     viewModel: DetailPeminjamanVM = viewModel(factory = PenyediaViewModel.Factory)
 ) {
-    val navyGray = colorResource(id = R.color.navy_gray)
     val coroutineScope = rememberCoroutineScope()
 
     var deleteConfirmationRequired by remember { mutableStateOf(false) }
 
     Scaffold(
-        topBar = { TopAppBar(title = "Detail Peminjaman", canNavigateBack = true, navigateUp = navigateBack) },
+        topBar = {
+            TopAppBar(
+                title = "Detail Peminjaman",
+                canNavigateBack = true,
+                navigateUp = navigateBack) },
         floatingActionButton = {
-            FloatingActionButton(onClick = { navigateToEdit(viewModel.detailUiState.id) }, containerColor = navyGray, contentColor = Color.White) {
-                Icon(Icons.Default.Edit, contentDescription = null)
+            FloatingActionButton(
+                onClick = { navigateToEdit(viewModel.detailUiState.id) },
+                containerColor = colorResource(R.color.navy_gray),
+                contentColor = Color.White) {
+                Icon(Icons.Default.Edit,
+                    contentDescription = null)
             }
         }
     ) { innerPadding ->
         Column(modifier = Modifier.padding(innerPadding).fillMaxSize().background(colorResource(id = R.color.light_gray)).padding(24.dp)) {
             Card(modifier = Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = Color.White), shape = RoundedCornerShape(16.dp)) {
                 Column(modifier = Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                    DetailRow(label = "Barang", value = viewModel.detailUiState.nama_barang, icon = Icons.Default.ShoppingCart)
-                    DetailRow(label = "Peminjam", value = viewModel.detailUiState.nama_anggota, icon = Icons.Default.Person)
-                    DetailRow(label = "Status", value = viewModel.detailUiState.status_pinjam, icon = Icons.Default.Info)
-                    DetailRow(label = "Jumlah", value = "${viewModel.detailUiState.jumlah_pinjam} unit", icon = Icons.Default.List)
+                    DetailRow(
+                        label = "Barang",
+                        value = viewModel.detailUiState.nama_barang,
+                        icon = Icons.Default.ShoppingCart)
+                    DetailRow(
+                        label = "Peminjam",
+                        value = viewModel.detailUiState.nama_anggota,
+                        icon = Icons.Default.Person)
+                    DetailRow(
+                        label = "Status",
+                        value = viewModel.detailUiState.status_pinjam,
+                        icon = Icons.Default.Info)
+                    DetailRow(
+                        label = "Jumlah",
+                        value = "${viewModel.detailUiState.jumlah_pinjam} unit",
+                        icon = Icons.Default.List)
                 }
             }
             Spacer(Modifier.height(24.dp))

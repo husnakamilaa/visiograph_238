@@ -26,8 +26,10 @@ data class DetailPeminjaman(
     val id: Int = 0,
     val id_barang: Int = 0,
     val id_anggota: Int = 0,
+
     val nama_barang: String = "",
     val nama_anggota: String = "",
+
     val tanggal_pinjam: String = "",
     val tanggal_kembali: String = "",
     val jumlah_pinjam: Int = 0,
@@ -51,7 +53,10 @@ fun DataPeminjaman.toDetailPeminjaman(): DetailPeminjaman = DetailPeminjaman(
     tanggal_pinjam = tanggal_pinjam,
     tanggal_kembali = tanggal_kembali,
     jumlah_pinjam = jumlah_pinjam,
-    status_pinjam = status_pinjam
+    status_pinjam = status_pinjam,
+
+    nama_barang = nama_barang ?: "",
+    nama_anggota = nama_anggota ?: "",
 )
 
 fun DataPeminjaman.toUiStatePeminjaman(

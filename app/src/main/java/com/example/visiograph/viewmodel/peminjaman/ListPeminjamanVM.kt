@@ -58,15 +58,12 @@ class ListPeminjamanVM(private val repo: RepositoryDataPeminjaman) : ViewModel()
 
     fun getPeminjaman() {
         viewModelScope.launch {
-            println("DEBUG_PINJEM: getBarang() CALLED")
             peminjamanUiState = ListPeminjamanUiState.Loading
             try {
                 val list = repo.getAllPeminjaman()
                 _dataPusat.value = list
-                println("DEBUG_PINJEM: data size = ${list.size}")
                 peminjamanUiState = ListPeminjamanUiState.Success(list)
             } catch (e: Exception) {
-                println("DEBUG_PINJEM: ERROR = ${e.message}")
                 peminjamanUiState = ListPeminjamanUiState.Error
             }
         }
